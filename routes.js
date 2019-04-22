@@ -33,7 +33,7 @@ const requestsHandler = (req, res)=>{
   res.write('<html>');
   res.write('<head><title>Helllo  Node.js</title></head>')
   res.write('<body>')
-  res.write('<h1>Helllo from Node.js server</h1>')
+  res.write('<h1>Helllo from Node.js server!</h1>')
   res.write('</body>')
   res.write('</html>')
   res.end()

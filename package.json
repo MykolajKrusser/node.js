@@ -1,0 +1,27 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "Node.js guide",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MykolajKrusser/node.js.git"
+  },
+  "keywords": [
+    "node.js",
+    "basic"
+  ],
+  "author": "MykolajKrusser",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MykolajKrusser/node.js/issues"
+  },
+  "homepage": "https://github.com/MykolajKrusser/node.js#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.11"
+  }
+}
