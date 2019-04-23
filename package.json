@@ -23,5 +23,8 @@
   "homepage": "https://github.com/MykolajKrusser/node.js#readme",
   "devDependencies": {
     "nodemon": "^1.18.11"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
   }
 }
