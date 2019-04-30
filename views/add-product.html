@@ -4,21 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link type="text/css" href="/css/main.css" rel="stylesheet">
+  <link type="text/css" href="/css/add-product.css" rel="stylesheet">
+  <title>Add product</title>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
+  <header class="header">
+    <nav class="header_navigation_bar">
+      <ul class="header_navigation_bar__items">
         <li><a href="/">Shop</a></li>
         <li><a href="/admin/add-product">Add product</a></li>
       </ul>
     </nav>
   </header>
-  <main>
-    <form action="add-product" method="POST">
+  <main class="main_content">
+    <form class="main_form" action="/admin/add-product" method="POST">
       <input type="text" name="title">
-      <button type="submit">Submit</button>
+      <button class="gradient-btn" type="submit">Submit</button>
     </form>
   </main>
 </body>
