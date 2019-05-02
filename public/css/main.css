@@ -41,7 +41,8 @@ h1, h2, p{
   color: white;
 }
 .header .header_navigation_bar .header_navigation_bar__items a:hover,
-.header .header_navigation_bar .header_navigation_bar__items a:active{
+.header .header_navigation_bar .header_navigation_bar__items a:active,
+.header .header_navigation_bar .header_navigation_bar__items a.active{
   color: yellow;
 }
 
