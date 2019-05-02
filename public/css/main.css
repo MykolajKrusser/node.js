@@ -15,7 +15,7 @@ h1, h2, p{
 .header{
   width: 100vw;
   min-height: 9vh;
-  background: rgba(195, 233, 26, 0.76);
+  background: rgba(0, 112, 0, 0.76);
 }
 
 .header nav{
@@ -38,7 +38,7 @@ h1, h2, p{
 .header .header_navigation_bar .header_navigation_bar__items a{
   text-decoration: none;
   margin: 15px;
-  color: grey;
+  color: white;
 }
 .header .header_navigation_bar .header_navigation_bar__items a:hover,
 .header .header_navigation_bar .header_navigation_bar__items a:active{
@@ -51,8 +51,13 @@ h1, h2, p{
   text-align: center;
   justify-content: center;
   flex-wrap: wrap;
+  background: rgb(248, 255, 209);
+  min-height: 90vh;
 }
 
+/*
+  product item
+*/
 .product__item{
   display: flex;
   flex-direction: column;
@@ -65,4 +70,45 @@ h1, h2, p{
   width: 100%;
   height: 50%;
   margin: 0 auto;
+}
+
+/*
+  Submit button
+*/
+.gradient-btn {
+  width: 50%;
+  margin: 15px auto;
+  transform: translate(0%, 15%);
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 16px;
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: .5s;
+  border: 4px solid #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
+  overflow: hidden;
+}
+.gradient-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to left, #d4d4b1, #9add42);
+  z-index: -1;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .5s ease-in-out;
+}
+.gradient-btn:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
 }

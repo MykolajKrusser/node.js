@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(type="text/css", href="/css/main.css", rel="stylesheet")
+    link(type="text/css", href="/css/forms.css", rel="stylesheet")
+    title #{pageTitle}
+  body
+    header.header
+      nav.header_navigation_bar
+        ul.header_navigation_bar__items
+          li
+            a(href="/") Shop
+          li
+            a(href="/admin/add-product") Add product
+    main.main_content
+      form.main_form(action="/admin/add-product", method="POST")
+        input(type="text" name="title" placeholder="Book title")
+        button.gradient-btn(type="submit") Submit
