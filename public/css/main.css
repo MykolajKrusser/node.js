@@ -36,6 +36,10 @@ html, body{
   margin: 15px;
   color: grey;
 }
+.header .header_navigation_bar .header_navigation_bar__items a:hover,
+.header .header_navigation_bar .header_navigation_bar__items a:active{
+  color: yellow;
+}
 
 .main_content{
   min-height: 90vh;
