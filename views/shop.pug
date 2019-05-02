@@ -4,8 +4,9 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title My Shop
+    title #{docTitle}
     link(rel="stylesheet", href="/css/main.css")
+    link(rel="stylesheet", href="/css/add-product.css")
   body
       header.header
         nav.header_navigation_bar
@@ -14,3 +15,14 @@ html(lang="en")
               a(href="/") Shop
             li
               a(href="/admin/add-product") Add product
+      main.main_content
+        if prods.length > 0
+          each product in prods
+            article.product__item
+              h1 #{product.title}
+              img(src='/assets/img/book.jpg', alt="Book")
+              h2 Price 1.99$
+              p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis, molestias.
+              button.gradient-btn Add to Card
+        else 
+          h1 No products
