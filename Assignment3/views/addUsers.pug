@@ -1,0 +1,7 @@
+extends layout/main-layout.pug
+
+block content
+  main
+    form(action="/newUser", method="POST")
+      input(type="text", name="userName")
+      button(type="submit") Submit
