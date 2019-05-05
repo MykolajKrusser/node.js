@@ -6,9 +6,9 @@ block content
       each product in prods
         article.product__item
           h1 #{product.title}
-          img(src='/assets/img/book.jpg', alt="Book")
-          h2 Price 1.99$
-          p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis, molestias.
+          img(src=product.imgUrl, alt=product.title)
+          h2 #{product.price}$
+          p #{product.description}
           button.gradient-btn Add to Card
     else 
       h1 No products
