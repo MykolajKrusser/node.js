@@ -5,5 +5,12 @@ block styles
 block content
   main.main_content
         form.main_form(action="/admin/add-product", method="POST")
-          input(type="text" name="title" placeholder="Book title")
+          label(for="title") Book title
+          input(type="text" name="title" placeholder="title")
+          label(for="imgUrl") Book picture URL
+          input(type="text" name="imgUrl" placeholder="picture URL")
+          label(for="description") Book description
+          textarea(cols="30", rows="10" type="text" name="description" id="description" placeholder="description")
+          label(for="price") Book price
+          input(type="text" name="price" placeholder="price")
           button.gradient-btn(type="submit") Submit
