@@ -71,7 +71,7 @@ h1, h2, p{
   height: 50%;
   margin: 0 auto;
 }
-.product__item button{
+.product__item form{
   margin: auto auto 25px auto;
 }
 
@@ -79,8 +79,7 @@ h1, h2, p{
   Submit button
 */
 .gradient-btn {
-  width: 50%;
-  margin: 15px auto;
+  margin: auto auto 0 auto;
   transform: translate(0%, 15%);
   width: 200px;
   height: 50px;
@@ -114,4 +113,21 @@ h1, h2, p{
 .gradient-btn:hover::before {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+/*
+  <a> button
+*/
+
+.gradient-a{
+  margin: 10px auto;
+  background-color: #DDDDDD;
+  padding-top: 5%;
+}
+
+.edit-product-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto auto 0 auto;
 }
