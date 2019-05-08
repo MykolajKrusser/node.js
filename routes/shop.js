@@ -4,9 +4,11 @@ const router = express.Router();
 
 const shopController = require('../controllers/shop');
 
-router.get( '/' , shopController.getIndex);
+router.get('/' , shopController.getIndex);
 
 router.get('/products', shopController.getProduct);
+
+router.get('/product/:productId', shopController.getProductDetails)
 
 router.get('/cart', shopController.getCart);
 
