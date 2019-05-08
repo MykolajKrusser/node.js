@@ -8,7 +8,9 @@ block content
         img(src=product.imgUrl, alt=product.title)
         h2 #{product.price}$
         p #{product.description}
-        form(action="/add-to-card", method="post")
-          button.gradient-btn Add to Card
+        .edit-product-item
+          a.gradient-btn.gradient-a( href=`/product/${product.id}` ) Details
+          form(action="/add-to-card", method="post")
+            button.gradient-btn Add to Card
   else 
     h1 No products
