@@ -1,16 +1,17 @@
 extends ../layouts/main-layout.pug
 
 block content
-  if prods.length > 0
-    each product in prods
-      article.product__item
-        h1 #{product.title}
-        img(src=product.imgUrl, alt=product.title)
-        h2 #{product.price}$
-        p #{product.description}
-        .edit-product-item
-          a.gradient-btn.gradient-a( href="/admin/edit-product") Edit
-          form(action="/admin/delete-product", method="post")
-            button.gradient-btn Delete
-  else 
-    h1 No products
+  main.main_content
+    if prods.length > 0
+      each product in prods
+        article.product__item
+          h1 #{product.title}
+          img(src=product.imgUrl, alt=product.title)
+          h2 #{product.price}$
+          p #{product.description}
+          .edit-product-item
+            a.gradient-btn.gradient-a( href="/admin/edit-product") Edit
+            form(action="/admin/delete-product", method="post")
+              button.gradient-btn Delete
+    else 
+      h1 No products
