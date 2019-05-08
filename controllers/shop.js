@@ -8,7 +8,9 @@ exports.getProduct = (req, res, next)=>{
 
 exports.getProductDetails = (req, res)=>{
   const prodId = req.params.productId
-  console.log(prodId)
+  Product.findeById(prodId, product => {
+    console.log(product)
+  })
   res.render('shop/productDetail', {docTitle: 'Product details'})
 }
 
