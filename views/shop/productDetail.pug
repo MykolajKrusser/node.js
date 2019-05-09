@@ -9,5 +9,4 @@ block content
     p #{product.description}
     .edit-product-item.details-product-item
       a.gradient-btn.gradient-a(href='/products') All products
-      form(action="/add-to-card", method="post")
-        button.gradient-btn Add to Card
+      include ../layouts/add-to-cart.pug

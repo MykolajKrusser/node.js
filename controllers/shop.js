@@ -23,6 +23,12 @@ exports.getCart = (req, res)=>{
   res.render('shop/cart', {docTitle: 'Your cart', path: '/cart'});
 };
 
+exports.postCart = (req, res)=>{
+  const productId = req.body.productId;
+  console.log(productId);
+  res.redirect('/cart')
+};
+
 exports.getCheckout = (req, res)=>{
   res.render('shop/checkout', {docTitle: 'Your checkout', path: '/checkout'});
 };
