@@ -4,13 +4,16 @@ block styles
   link(type="text/css", href="/css/forms.css", rel="stylesheet")
 block content
   main.main_content
-    form.main_form(action="/admin/edit-product", method="POST")
+    form.main_form(action= editing ? "/admin/edit-product" : "/admin/add-product", method="POST")
       label(for="title") Book title
-      input(type="text" name="title" placeholder="title")
+      input(type="text" name="title" placeholder="title" value= editing ? product.title : "")
       label(for="imgUrl") Book picture URL
-      input(type="text" name="imgUrl" placeholder="picture URL")
+      input(type="text" name="imgUrl" placeholder="picture URL" value= editing ? product.imgUrl: "")
       label(for="description") Book description
-      textarea(cols="30", rows="10" type="text" name="description" id="description" placeholder="description")
+      textarea(cols="30", rows="10" type="text" name="description" id="description" placeholder="description") #{product.description}
       label(for="price") Book price
-      input(type="number" step="0.01" name="price" placeholder="price")
-      button.gradient-btn(type="submit") Submit
+      input(type="number" step="0.01" name="price" placeholder="price" value= editing ? product.price: "")
+      if(editing)
+        button.gradient-btn(type="submit") Edit product
+      else
+        button.gradient-btn(type="submit") Add product

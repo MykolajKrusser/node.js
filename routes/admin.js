@@ -4,7 +4,7 @@ const router = express.Router();
 
 const adminController = require('../controllers/admin');
 
-router.get( '/edit-product' , adminController.getAddProduct);
+router.get( '/add-product' , adminController.getAddProduct);
 
 router.get( '/products', adminController.getProducts);
 
