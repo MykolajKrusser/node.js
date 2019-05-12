@@ -35,7 +35,10 @@ exports.getEditProduct = (req, res, next)=>{
       product: product
     });
   })
-  
+};
+
+exports.postEditedProduct = (req, res)=>{
+
 };
 
 exports.getProducts = (req, res)=>{
