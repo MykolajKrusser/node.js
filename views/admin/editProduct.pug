@@ -14,6 +14,7 @@ block content
       label(for="price") Book price
       input(type="number" step="0.01" name="price" placeholder="price" value= editing ? product.price: "")
       if(editing)
+        input(type="hidden", name="productId" value=product.id)
         button.gradient-btn(type="submit") Edit product
       else
         button.gradient-btn(type="submit") Add product
