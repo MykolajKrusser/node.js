@@ -12,6 +12,7 @@ block content
           .edit-product-item
             a.gradient-btn.gradient-a( href=`/admin/edit-product/${product.id}?edit=true`) Edit
             form(action="/admin/delete-product", method="post")
+              input(type="hidden", name="productId", value=product.id)
               button.gradient-btn Delete
     else 
       h1 No products
