@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const rootDir = require('./utils/path');
+const db = require('./utils/database');
 
 const app = express();
 
@@ -10,7 +11,15 @@ app.set('views', 'views');
 
 const adminRoutes = require('./routes/admin');
 const shop = require('./routes/shop');
-const page404Controller = require('./controllers/404')
+const page404Controller = require('./controllers/404');
+
+db.execute('SELECT * FROM products')
+  .then(result => {
+    console.log(result[0], result[1]);
+  })
+  .catch(err => {
+    console.log(err);
+  });
 
 app.use(bodyParser.urlencoded({extended: false}));
 
