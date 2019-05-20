@@ -3,7 +3,7 @@ const sequelize = require('../utils/database');
 
 const Product = sequelize.define('product', {
   id: {
-    typy: Sequelize.INTEGER,
+    type: Sequelize.INTEGER,
     autoIncrement: true,
     allowNull: false,
     primaryKey: true
@@ -14,11 +14,11 @@ const Product = sequelize.define('product', {
     allowNull: false,
   },
   imgUrl: {
-    type: Selection.STRING,
+    type: Sequelize.STRING,
     allowNull: false
   },
   description: {
-    type: Selection.STRING,
+    type: Sequelize.STRING,
     allowNull: false
   }
 });
