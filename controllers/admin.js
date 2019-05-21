@@ -60,9 +60,10 @@ exports.postEditedProduct = (req, res)=>{
 };
 
 exports.getProducts = (req, res)=>{
-  Product.fetchAll()
-  .then(([rows, fieldData]) => {
-    res.render('admin/products', {prods: rows, docTitle: 'Admin products', path: '/admin/products'});
+  Product
+  .findAll()
+  .then(products => {
+    res.render('admin/products', {prods: products, docTitle: 'Admin products', path: '/admin/products'});
   })
   .catch(err => console.log(err));
 };
