@@ -3,6 +3,9 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const rootDir = require('./utils/path');
 const sequelize = require('./utils/database');
+const Product = require('./models/product');
+const User = require('./models/user');
+const Cart = require('./models/cart');
 
 const app = express();
 
@@ -21,8 +24,11 @@ app.use(shop);
 
 app.use(page404Controller.get404page);
 
+Product.belongsTo(User, {constraints: true, onDelete: 'CASCADE'});
+User.hasMany(Product);
+
 sequelize
-  .sync()
+  .sync({force: true})
   .then(result => {
     //console.log(result);
     app.listen(3030);
