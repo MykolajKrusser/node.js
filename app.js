@@ -6,6 +6,7 @@ const sequelize = require('./utils/database');
 const Product = require('./models/product');
 const User = require('./models/user');
 const Cart = require('./models/cart');
+const CartItem = require('./models/cart-items');
 
 const app = express();
 
@@ -35,8 +36,13 @@ app.use(shop);
 
 app.use(page404Controller.get404page);
 
+//Table Relations
 Product.belongsTo(User, {constraints: true, onDelete: 'CASCADE'});
 User.hasMany(Product);
+User.hasOne(Cart);
+Cart.belongsTo(User);
+Cart.belongsToMany(Product, {through: CartItem});
+Product.belongsToMany(Cart, {through: CartItem});
 
 sequelize
   //.sync({force: true})
