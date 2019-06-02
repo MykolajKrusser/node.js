@@ -1,7 +1,7 @@
 extends ../layouts/main-layout.pug
 
 block content
-  main.main_content
+  main.main_content.main_content_column
     if products.length > 0
       ul
         each product in products
@@ -10,5 +10,7 @@ block content
             form(action="/cart-delete-item", method="post")
               input(type="hidden", name="productId" value=product.id)
               button.gradient-btn.gradient-a(type="submit") delete
+      form(action="/create-order", method='post')
+        button.gradient-btn.gradient-a(type="submit") Order Now!
     else
       h1 No products in cart!

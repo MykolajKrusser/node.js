@@ -142,6 +142,9 @@ h1, h2, p{
   background: rgb(248, 255, 209);
   min-height: 90vh;
 }
+.main_content_column{
+  flex-direction: column;
+}
 
 .productDetails{
   flex-direction: column;
