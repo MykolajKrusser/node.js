@@ -3,10 +3,10 @@ extends ../layouts/main-layout.pug
 block content
   main.main_content.main_content_column
     if products.length > 0
-      ul
+      ul.cart__item
         each product in products
           li
-            p #{product.title} (#{product.cartItem.quantity})
+            p #{product.title} & quantity is #{product.cartItem.quantity}
             form(action="/cart-delete-item", method="post")
               input(type="hidden", name="productId" value=product.id)
               button.gradient-btn.gradient-a(type="submit") delete

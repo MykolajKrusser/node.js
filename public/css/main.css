@@ -188,7 +188,7 @@ h1, h2, p{
 */
 .gradient-btn {
   margin: auto auto 0 auto;
-  transform: translate(0%, 15%);
+  transform: translate(0%, 0%);
   width: 200px;
   height: 50px;
   text-align: center;
@@ -203,6 +203,7 @@ h1, h2, p{
   border-radius: 5px;
   box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
   overflow: hidden;
+  padding: 0;
 }
 .gradient-btn::before {
   content: '';
@@ -242,6 +243,40 @@ h1, h2, p{
 
 .details-product-item{
   margin: 5px auto 100px auto;
+}
+
+
+/*
+  Cart items
+*/
+
+.cart__item{
+  width: 80%;
+  list-style: none;
+  margin: 20px auto;
+  padding-inline-start: 0;
+}
+
+.cart__item li{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0 25px;
+  background: rgba(230, 255, 8, 0.295);
+  margin: 25px auto;
+}
+
+.cart__item li form{
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
