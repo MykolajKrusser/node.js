@@ -9,7 +9,7 @@ const app = express();
 app.set('view engine', 'pug');
 app.set('views', 'views');
 
-//const adminRoutes = require('./routes/admin');
+const adminRoutes = require('./routes/admin');
 //const shop = require('./routes/shop');
 const page404Controller = require('./controllers/404');
 const mongoConnect = require('./utils/database');
@@ -28,7 +28,7 @@ app.use((req, res, next)=>{
   //   })
 });
 
-//app.use('/admin', adminRoutes);
+app.use('/admin', adminRoutes);
 //app.use(shop);
 
 app.use(page404Controller.get404page);
