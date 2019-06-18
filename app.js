@@ -33,7 +33,6 @@ app.use('/admin', adminRoutes);
 
 app.use(page404Controller.get404page);
 
-mongoConnect((client) => {
-  console.log(client);
+mongoConnect(() => {
   app.listen(3000);
 })
