@@ -12,7 +12,7 @@ app.set('views', 'views');
 const adminRoutes = require('./routes/admin');
 //const shop = require('./routes/shop');
 const page404Controller = require('./controllers/404');
-const mongoConnect = require('./utils/database');
+const mongoConnect = require('./utils/database').mongoConnect;
 
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -26,6 +26,7 @@ app.use((req, res, next)=>{
   //   .catch(err => {
   //     console.log(err)
   //   })
+  next()
 });
 
 app.use('/admin', adminRoutes);
