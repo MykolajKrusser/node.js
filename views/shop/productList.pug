@@ -10,7 +10,7 @@ block content
           h2 #{product.price}$
           p #{product.description}
           .edit-product-item
-            a.gradient-btn.gradient-a( href=`/product/${product.id}` ) Details
+            a.gradient-btn.gradient-a( href=`/product/${product._id}` ) Details
             include ../layouts/add-to-cart.pug
     else 
       h1 No products

@@ -13,26 +13,26 @@ exports.getProduct = (req, res, next)=>{
 
 exports.getProductDetails = (req, res)=>{
   const prodId = req.params.productId
-  Product.findAll({where: {id: prodId}})
-    .then(product => {
-      res.render(
-        'shop/productDetail', 
-        {docTitle: product[0].title, product: product[0], path: '/products'}
-      )
-    })
-    .catch(err =>{
-      console.log(err)
-    })
-  // Product.findByPk(prodId)
-  //   .then( product => {
+  // Product.findAll({where: {id: prodId}})
+  //   .then(product => {
   //     res.render(
   //       'shop/productDetail', 
-  //       {docTitle: product.title, product: product, path: '/products'}
+  //       {docTitle: product[0].title, product: product[0], path: '/products'}
   //     )
   //   })
   //   .catch(err =>{
   //     console.log(err)
-  //   });
+  //   })
+  Product.findById(prodId)
+    .then( product => {
+      res.render(
+        'shop/productDetail', 
+        {docTitle: product.title, product: product, path: '/products'}
+      )
+    })
+    .catch(err =>{
+      console.log(err)
+    });
 }
 
 exports.getIndex = (req, res)=>{
