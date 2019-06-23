@@ -1,6 +1,6 @@
-const db = require('../utils/database').getDb;
 const mongodb = require('mongodb');
-const ObjectId = new mongodb.ObjectId;
+const getDb = require('../utils/database').getDb;
+const ObjectId = mongodb.ObjectId;
 
 
 class User {
@@ -16,7 +16,15 @@ class User {
 
   static findById(userId){
     const db = getDb();
-    return db.collection('user').findOne({_id: new ObjectId(userId)});
+    return db.collection('users')
+      .findOne({ _id: new ObjectId(userId) })
+      .then(user => {
+        console.log(user);
+        return user
+      })
+      .catch(err => {
+        console.log(err)
+      });
   }
 }
 module.exports = User;
