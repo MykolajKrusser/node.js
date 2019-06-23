@@ -14,18 +14,20 @@ const shop = require('./routes/shop');
 const page404Controller = require('./controllers/404');
 const mongoConnect = require('./utils/database').mongoConnect;
 
+const User = require('./models/user');
+
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(express.static(path.join(rootDir, 'public')));
 app.use((req, res, next)=>{
-  // User.findByPk(1)
-  //   .then(user =>{
-  //     req.user = user
-  //     next()
-  //   })
-  //   .catch(err => {
-  //     console.log(err)
-  //   })
+  User.findById('5d0f83917dfa931adcc38608')
+    .then(user =>{
+      req.user = user
+      next()
+    })
+    .catch(err => {
+      console.log(err)
+    })
   next()
 });
 
