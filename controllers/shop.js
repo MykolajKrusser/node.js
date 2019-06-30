@@ -49,16 +49,8 @@ exports.getIndex = (req, res)=>{
 exports.getCart = (req, res)=>{
   req.user
     .getCart()
-    .then(cart => {
-      return cart
-        .getProducts()
-        .then(products => {
-          console.log(products)
-          res.render('shop/cart', {products: products, docTitle: 'Your cart', path: '/cart'});
-        })
-        .catch(err =>{
-          console.log(err)
-        })
+    .then(product => { 
+      res.render('shop/cart', {products: product, docTitle: 'Your cart', path: '/cart'});
     })
     .catch(err=>{
       console.log(err)
