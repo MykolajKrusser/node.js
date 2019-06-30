@@ -65,6 +65,7 @@ exports.postCart = (req, res)=>{
     })
     .then(result =>{
       console.log(result)
+      res.redirect('/cart')
     });
   // let fetchedCart;
   // let newQuantity = 1;
