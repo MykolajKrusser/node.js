@@ -93,7 +93,8 @@ exports.postOrder = (req, res)=>{
 };
 
 exports.getOrders = (req, res)=>{
-  req.user.getOrders({include: ['products']})
+  req.user
+  .getOrders()
   .then(orders => {
     res.render('shop/orders', {orders: orders ,docTitle: 'Your orders', path: '/orders'});
   })
