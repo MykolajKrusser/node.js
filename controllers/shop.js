@@ -82,7 +82,6 @@ exports.postCartDeleteProduct = (req, res)=>{
 }
 
 exports.postOrder = (req, res)=>{
-  let fetchedCart;
   req.user
     .addOrder()
     .then(result=>{
