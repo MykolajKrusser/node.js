@@ -12,7 +12,7 @@ app.set('views', 'views');
 const adminRoutes = require('./routes/admin');
 const shop = require('./routes/shop');
 const page404Controller = require('./controllers/404');
-const mongoConnect = require('./utils/database').mongoConnect;
+const mongoose = require('mongoose');
 
 const User = require('./models/user');
 
@@ -35,6 +35,10 @@ app.use(shop);
 
 app.use(page404Controller.get404page);
 
-mongoConnect(() => {
-  app.listen(3000);
-})
+mongoose.connect(
+  'mongodb+srv://nicko:nicko123@cluster0-zfaem.mongodb.net/test?retryWrites=true&w=majority'
+).then(result => {
+  app.listen(3000)
+}).catch(err => {
+  console.log(err)
+});
