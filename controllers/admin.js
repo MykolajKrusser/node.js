@@ -79,8 +79,14 @@ exports.postEditedProduct = (req, res)=>{
 
 exports.getProducts = (req, res)=>{
   Product.find()
+  // .select(' title price -_id')
+  // .populate('userId')
   .then(products => {
-    res.render('admin/products', {prods: products, docTitle: 'Admin products', path: '/admin/products'});
+    res.render('admin/products', {
+      prods: products, 
+      docTitle: 'Admin products', 
+      path: '/admin/products'
+    });
   })
   .catch(err => console.log(err));
 };
