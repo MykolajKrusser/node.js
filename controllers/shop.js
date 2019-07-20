@@ -111,14 +111,13 @@ exports.postOrder = (req, res)=>{
 };
 
 exports.getOrders = (req, res)=>{
-  req.user
-  .getOrders()
-  .then(orders => {
-    res.render('shop/orders', {orders: orders ,docTitle: 'Your orders', path: '/orders'});
-  })
-  .catch(err => {
-    console.log(err)
-  });
+  Orders.find({'user.userId': req.user._id})
+    .then(orders => {
+      res.render('shop/orders', {orders: orders ,docTitle: 'Your orders', path: '/orders'});
+    })
+    .catch(err => {
+      console.log(err)
+    });
 };
 
 exports.getCheckout = (req, res)=>{
