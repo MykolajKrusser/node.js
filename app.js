@@ -11,6 +11,9 @@ app.set('views', 'views');
 
 const adminRoutes = require('./routes/admin');
 const shop = require('./routes/shop');
+const auth = require('./routes/auth');
+
+
 const page404Controller = require('./controllers/404');
 const mongoose = require('mongoose');
 
@@ -31,8 +34,10 @@ app.use((req, res, next)=>{
     });
 });
 
+// Routes use
 app.use('/admin', adminRoutes);
 app.use(shop);
+app.use(auth);
 
 app.use(page404Controller.get404page);
 
